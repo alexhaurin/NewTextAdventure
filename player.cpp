@@ -1,9 +1,5 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include "vectors.h"
 #include "player.h"
-
 
 void Player::getAttribute(const char* att) {
     std::string input;
@@ -32,4 +28,17 @@ void Player::getAttribute(const char* att) {
     }
 
     attributes[att] = points;
+}
+
+bool Player::challenge(const char* task, unsigned int dif) {
+    if (attributes[task] >= dif + level) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+void Player::caught(const char* message) {
+    std::cout << message << "You lose :(" << std::endl;
 }
