@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <vector>
 #include <string>
 
@@ -16,7 +17,7 @@ namespace vectors {
 	//Deletes item from vector using value
 	template<typename T>
 	void deleteItem(std::vector<T>& vector, T item) {
-		for (unsigned int i = 0; i < vector.size(); i++) {
+		for (int i = 0; i < vector.size(); i++) {
 			if (vector[i] == item) {
 				vector.erase(0);
 				break;
@@ -31,8 +32,7 @@ namespace vectors {
 			if (vector[i] == item) {
 				return true;
 			}
-		}
-
+		}	
 		return false;
 	}
 
@@ -41,5 +41,6 @@ namespace vectors {
 		for (unsigned int i = 0; i < vector.size(); i++) {
 			std::cout << vector[i] << ", ";
 		}
+		std::cout << std::endl;
 	}
 }
