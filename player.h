@@ -7,15 +7,18 @@
 class Player {
 public:
 	void getAttribute(const char* att);
-	bool challenge(const char* task, unsigned int dif);
-	void caught(const char* message);
+	void challenge(std::vector<std::string> completed, std::vector<std::string> failed, std::string task, std::vector<std::string> choices, unsigned int dif);
+	void catacombs();
+	void fightDragon();
+	void caught(std::string message);
+	void win(const char* message);
 
 public:
-	std::vector<std::string> items;
+	std::vector<std::string> items = { "_" };
 	unsigned int totalPoints = 10;
-	unsigned int level = 0;
+	double level = 0.0;
 
-	std::map<const char*, unsigned int> attributes = {
+	std::map<std::string, unsigned int> attributes = {
 		{ "stealth", 0 },
 		{ "luck", 0 },
 		{ "speed", 0 }
